@@ -2,13 +2,16 @@
     <div class="border">
         <print-component 
             :count="count"
-            @onTimer="startTimer"
+            @updateCountSecond="updateCountSecond"
         ></print-component>
+
+        {{ countSecond }}
     </div>   
 </template>
 
 <script>
     import PrintComponent from './PrintComponent.vue'
+    
     
     export default {
         name: 'ContainerComponent',
@@ -18,6 +21,7 @@
         data() {
             return {
                 count: 0,
+                countSecond: 0
             }
         },
         methods: {
@@ -27,8 +31,15 @@
 
             countUp: function() {
                 this.count++;
-            }
+            },
+
+            updateCountSecond: function(number) {
+                this.countSecond = number
+            },
         },
+        mounted() {
+            this.startTimer()
+        }
     }    
 </script>
 

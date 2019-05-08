@@ -1,8 +1,7 @@
 <template>
     <div>
         <p class="text-red">{{ text }}</p>
-        <p class="text-green" @click.once="$emit('onTimer')">{{ count }}</p>
-        <p class="text-orange" @click.once="startTimer">{{ countSecond }}</p>
+        <p class="text-green">{{ count }}</p>
     </div>
 </template>
 
@@ -28,14 +27,13 @@
             },
 
             countUp: function() {
-                this.countSecond++;
+                this.$emit('updateCountSecond', this.countSecond++)
             }
         },
-        // methods: {
-        //     startTimer() {
-        //         this.$emit('onTimer')
-        //     },
-        // },
+        mounted() {
+            this.startTimer()
+        }
+
     }
     
 </script>
@@ -48,10 +46,6 @@
 
     .text-green {
         color: green;
-    }
-
-    .text-orange {
-        color: orange;
     }
 
 </style>
