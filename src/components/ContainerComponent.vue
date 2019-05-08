@@ -36,8 +36,8 @@
 
     .border {
         border: 1px solid red;
-        width: 300px;
-        height: 100px;
+        width: 500px;
+        height: 200px;
         margin: auto;
     }
     

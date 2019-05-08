@@ -2,6 +2,7 @@
     <div>
         <p class="text-red">{{ text }}</p>
         <p class="text-green" @click.once="$emit('onTimer')">{{ count }}</p>
+        <p class="text-orange" @click.once="startTimer">{{ countSecond }}</p>
     </div>
 </template>
 
@@ -18,6 +19,16 @@
         data() {
             return {
                 text: "Hello World!",
+                countSecond: 0
+            }
+        },
+        methods: {
+            startTimer: function() {
+                setInterval(this.countUp, 1000);
+            },
+
+            countUp: function() {
+                this.countSecond++;
             }
         },
         // methods: {
@@ -37,6 +48,10 @@
 
     .text-green {
         color: green;
+    }
+
+    .text-orange {
+        color: orange;
     }
 
 </style>
