@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="text-red">{{ text }}</p>
-        <p class="text-green" v-on:click.once="startTimer">{{ count }}</p>
+        <p class="text-green" @click.once="$emit('onTimer')">{{ count }}</p>
     </div>
 </template>
 
@@ -10,32 +10,21 @@
     export default {
         name: 'PrintComponent',
         props: {
-            text: String,
-            count: Number
-        },
-        data: function() {
-            return {
-                count: 0,
-                timer: null
-            }
-        },
-        methods: {
-            startTimer: function() {
-                this.timer = setInterval(this.countUp, 1000);
+            count: {
+                type: Number,
+                default: null
             },
-
-            countUp: function() {
-                this.count++;
+        },
+        data() {
+            return {
+                text: "Hello World!",
             }
         },
-        // computed: {
-        //     startTimer: function() {
-        //         this.timer = setInterval(this.countUp, 1000);
+        // methods: {
+        //     startTimer() {
+        //         this.$emit('onTimer')
         //     },
-        //     countUp: function() {
-        //         this.count++;
-        //     }
-        // }
+        // },
     }
     
 </script>

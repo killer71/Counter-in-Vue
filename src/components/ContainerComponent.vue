@@ -1,9 +1,10 @@
 <template>
     <div class="border">
-        <print-component text="Hello World!"/>
-        <print-component count="0" />
-    </div>
-   
+        <print-component 
+            :count="count"
+            @onTimer="startTimer"
+        ></print-component>
+    </div>   
 </template>
 
 <script>
@@ -14,8 +15,21 @@
         components: {
             PrintComponent
         },
-    }
-    
+        data() {
+            return {
+                count: 0,
+            }
+        },
+        methods: {
+            startTimer: function() {
+                setInterval(this.countUp, 1000);
+            },
+
+            countUp: function() {
+                this.count++;
+            }
+        },
+    }    
 </script>
 
 <style scoped>
