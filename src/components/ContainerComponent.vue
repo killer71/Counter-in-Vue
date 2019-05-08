@@ -6,22 +6,24 @@
         ></print-component>
 
         {{ countSecond }}
+
     </div>   
 </template>
 
 <script>
     import PrintComponent from './PrintComponent.vue'
-    
+    import PrintSecondComponent from './PrintSecondComponent.vue'
     
     export default {
         name: 'ContainerComponent',
         components: {
-            PrintComponent
+            PrintComponent,
+            PrintSecondComponent
         },
         data() {
             return {
                 count: 0,
-                countSecond: 0
+                countSecond: 0,
             }
         },
         methods: {
@@ -36,6 +38,7 @@
             updateCountSecond: function(number) {
                 this.countSecond = number
             },
+
         },
         mounted() {
             this.startTimer()
