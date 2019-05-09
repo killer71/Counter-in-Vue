@@ -1,55 +1,43 @@
 <template>
     <div>
-        <p class="text-red">{{ text }}</p>
-        <p class="text-green">{{ count }}</p>
-
-        <print-second-component
-            @incrementCount="incrementCount"
-        ></print-second-component>
-
-        {{ numbers }}
-
+        <!-- <p class="text-green">{{ count }}</p> -->
     </div>
 </template>
 
 <script>
-    import PrintSecondComponent from './PrintSecondComponent.vue'
 
     export default {
         name: 'PrintComponent',
-        components: {
-            PrintSecondComponent
-        },
         props: {
-            count: {
+            count_c: {
                 type: Number,
                 default: null
             },
         },
-        data() {
-            return {
-                text: "Hello World!",
-                countSecond: 0,
-                numbers: 0
+        // data() {
+        //     return {
+        //         text: "Hello World!",
+        //         countSecond: 0,
+        //         numbers: 0
+        //     }
+        // },
+        // methods: {
+
+        //     multiply: function() {
+        //         this.$emit('updateCountSecond', this.count * 2)
+        //     },
+
+        // },
+        watch: {
+            count_c: function(newValue, oldValue) {
+                console.log(newValue, oldValue)
+                this.$emit('updateCountSecond_c', this.count_c * 2)
             }
         },
-        methods: {
-            startTimer: function() {
-                setInterval(this.countUp, 1000);
-            },
-
-            countUp: function() {
-                this.$emit('updateCountSecond', this.countSecond++)
-            },
-
-            incrementCount: function(numb) {
-                this.numbers = numb
-            },
-
-        },
-        mounted() {
-            this.startTimer()
-        }
+        // mounted() {
+        // //    this.startTimer( )
+        //     this.multiply()
+        // }
 
     }
     

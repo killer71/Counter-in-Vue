@@ -1,8 +1,8 @@
 <template>
     <div class="border">
         <print-component 
-            :count="count"
-            @updateCountSecond="updateCountSecond"
+            :count_c="count_p"
+            @updateCountSecond_c="updateCountSecond_p"
         ></print-component>
 
         {{ countSecond }}
@@ -12,30 +12,26 @@
 
 <script>
     import PrintComponent from './PrintComponent.vue'
-    import PrintSecondComponent from './PrintSecondComponent.vue'
     
     export default {
         name: 'ContainerComponent',
         components: {
             PrintComponent,
-            PrintSecondComponent
         },
         data() {
             return {
-                count: 0,
+                count_p: 0,
                 countSecond: 0,
             }
         },
         methods: {
             startTimer: function() {
-                setInterval(this.countUp, 1000);
+                setInterval(() => {
+                    this.count_p++;
+                }, 1000);
             },
 
-            countUp: function() {
-                this.count++;
-            },
-
-            updateCountSecond: function(number) {
+            updateCountSecond_p: function(number) {
                 this.countSecond = number
             },
 
