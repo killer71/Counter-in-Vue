@@ -1,13 +1,13 @@
 <template>
     <div class="border">
-        <print-component 
-            :count_c="count_p"
-            @updateCountSecond_c="updateCountSecond_p"
+        <print-component
+            :text_c="text_p"
+            @inputText_c="inputText_p"
         ></print-component>
 
-        {{ countSecond }}
-
-    </div>   
+        <b>{{text_p}}</b>
+  
+    </div>
 </template>
 
 <script>
@@ -20,25 +20,14 @@
         },
         data() {
             return {
-                count_p: 0,
-                countSecond: 0,
+                text_p: "Hello"
             }
         },
         methods: {
-            startTimer: function() {
-                setInterval(() => {
-                    this.count_p++;
-                }, 1000);
-            },
-
-            updateCountSecond_p: function(number) {
-                this.countSecond = number
-            },
-
+            inputText_p: function(txt) {
+                this.text_p = txt
+            }
         },
-        mounted() {
-            this.startTimer()
-        }
     }    
 </script>
 
