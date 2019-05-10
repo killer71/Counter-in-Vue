@@ -1,44 +1,49 @@
 <template>
     <div class="border">
-        <print-component 
-            :count_c="count_p"
-            @updateCountSecond_c="updateCountSecond_p"
+        <print-component
+            :text_c="text_p"
+            @inputText_c="inputText_p"
         ></print-component>
 
-        {{ countSecond }}
+        <b>{{text_p}}</b>
 
-    </div>   
+        <input-component
+            :input_c="input_p"
+            @inputSecond_c="inputSecond_p"
+
+            text="Hello World!"
+        ></input-component>
+  
+        <b>{{input_p}}</b>
+
+    </div>
 </template>
 
 <script>
     import PrintComponent from './PrintComponent.vue'
+    import InputComponent from './InputComponent.vue'
     
     export default {
         name: 'ContainerComponent',
         components: {
             PrintComponent,
+            InputComponent
         },
         data() {
             return {
-                count_p: 0,
-                countSecond: 0,
+                text_p: "Hello",
+                input_p: "World"
             }
         },
         methods: {
-            startTimer: function() {
-                setInterval(() => {
-                    this.count_p++;
-                }, 1000);
+            inputText_p: function(txt) {
+                this.text_p = txt
             },
 
-            updateCountSecond_p: function(number) {
-                this.countSecond = number
-            },
-
+            inputSecond_p: function(text) {
+                this.input_p = text
+            }
         },
-        mounted() {
-            this.startTimer()
-        }
     }    
 </script>
 

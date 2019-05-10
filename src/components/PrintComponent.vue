@@ -1,6 +1,14 @@
 <template>
     <div>
-        <!-- <p class="text-green">{{ count }}</p> -->
+
+        <input 
+            v-model="inputText" 
+            type="text" 
+            name="" 
+            id=""
+            placeholder="Ввести текст"
+        />
+
     </div>
 </template>
 
@@ -9,36 +17,24 @@
     export default {
         name: 'PrintComponent',
         props: {
-            count_c: {
-                type: Number,
-                default: null
-            },
-        },
-        // data() {
-        //     return {
-        //         text: "Hello World!",
-        //         countSecond: 0,
-        //         numbers: 0
-        //     }
-        // },
-        // methods: {
-
-        //     multiply: function() {
-        //         this.$emit('updateCountSecond', this.count * 2)
-        //     },
-
-        // },
-        watch: {
-            count_c: function(newValue, oldValue) {
-                console.log(newValue, oldValue)
-                this.$emit('updateCountSecond_c', this.count_c * 2)
+            text_c: {
+                type: String,
+                required: true
             }
         },
-        // mounted() {
-        // //    this.startTimer( )
-        //     this.multiply()
-        // }
-
+        data() {
+            return {
+                inputText: ""
+            }
+        },
+        watch: {
+            inputText: function() {
+                this.$emit('inputText_c', this.inputText)
+            }
+        },
+        mounted() {
+            this.inputText = this.text_c
+        }
     }
     
 </script>
