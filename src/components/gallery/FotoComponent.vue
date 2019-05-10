@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="card">
-            <img :src="url" class="img" alt="lampa">
-            <p class="description">{{ description }}</p>
-            <p class="price-old"><strike>{{ oldPrice }}</strike></p>
-            <p class="price">{{ price }}</p>
+            <img :src="card.url" class="img" alt="lampa">
+            <p class="description">{{ card.description }}</p>
+            <p class="price-old"><strike>{{ card.oldPrice }}</strike></p>
+            <p class="price">{{ card.price }}</p>
         </div>
     </div>
 </template>
@@ -14,21 +14,8 @@
     export default {
         name: 'FotoComponent',
         props: {
-            url: {
-                type: String,
-                default: null
-            },
-            description: {
-                type: String,
-                default: null
-            },
-            oldPrice: {
-                type: Number,
-                default: null
-            },
-            price: {
-                type: Number,
-                default: null
+            card: {
+                type: Object,
             },
         }
     }

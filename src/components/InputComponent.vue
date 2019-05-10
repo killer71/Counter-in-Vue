@@ -7,9 +7,15 @@
             v-for="card in cards"
         ></foto-component> -->
 
-        <!-- img(:src="card.img") -->
+            <!-- <div class="card"> 
+                <div v-for="(value, key) in card">
+                    {{ key }}: {{ value }}
+                </div>
+            </div> -->
 
-          <!-- .card__bg(:style="{backgroundImage: `url('${card.img}')` }") -->
+            <!-- <div v-for="(card) in card">
+                {{ card }}
+            </div> -->
 
     <div>
         <input 

@@ -2,10 +2,7 @@
     <div>
         <foto-component 
             v-for="card in cards"
-            :url="card.url"
-            :description="card.description"
-            :oldPrice="card.oldPrice"
-            :price="card.price"
+            :card="card"
         ></foto-component>
     </div>
 </template>
