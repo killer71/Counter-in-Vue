@@ -1,22 +1,4 @@
 <template>
-
-
-        <!-- <foto-component
-            description="Description for product"
-            :price="price"
-            v-for="card in cards"
-        ></foto-component> -->
-
-            <!-- <div class="card"> 
-                <div v-for="(value, key) in card">
-                    {{ key }}: {{ value }}
-                </div>
-            </div> -->
-
-            <!-- <div v-for="(card) in card">
-                {{ card }}
-            </div> -->
-
     <div>
         <input 
             v-model="inputTextSecond" 

@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <input 
             v-model="inputText" 
             type="text" 
@@ -8,7 +7,6 @@
             id=""
             placeholder="Ввести текст"
         />
-
     </div>
 </template>
 
