@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <container-component/>
+    <!-- <container-component/> -->
   </div>
 </template>
 
