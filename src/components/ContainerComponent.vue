@@ -10,6 +10,8 @@
         <input-component
             :input_c="input_p"
             @inputSecond_c="inputSecond_p"
+
+            text="Hello World!"
         ></input-component>
   
         <b>{{input_p}}</b>

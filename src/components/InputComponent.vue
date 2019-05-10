@@ -1,9 +1,23 @@
 <template>
+
+
+        <!-- <foto-component
+            description="Description for product"
+            :price="price"
+            v-for="card in cards"
+        ></foto-component> -->
+
+        <!-- img(:src="card.img") -->
+
+          <!-- .card__bg(:style="{backgroundImage: `url('${card.img}')` }") -->
+
     <div>
         <input 
             v-model="inputTextSecond" 
             type="text"
         />
+
+        <p>{{text}}</p>
     </div>
 </template>
 
@@ -15,6 +29,9 @@
             input_c: {
                 type: String,
                 required: true
+            },
+            text: {
+                type: String,
             }
         },
         data() {
