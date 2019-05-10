@@ -14,23 +14,33 @@
 
         <b>{{ textareaText_p }}</b>
 
+        <checkbox-component
+            :checInput_c="checInput_p"
+            @checkbox_c="checkbox_p"
+        ></checkbox-component>
+
+        <b>{{ checInput_p }}</b>
+
     </div>
 </template>
 
 <script>
     import InputComponent from './InputComponent.vue'
     import TextareaComponent from './TextareaComponent.vue'
+    import CheckboxComponent from './CheckboxComponent.vue'
 
     export default {
         name: 'FormComponent',
         components: {
             InputComponent,
-            TextareaComponent
+            TextareaComponent,
+            CheckboxComponent
         },
         data() {
             return {
                 text_p: "Hello",
-                textareaText_p: "It is texarea"
+                textareaText_p: "It is texarea",
+                checInput_p: ""
             }
         },
         methods: {
@@ -41,6 +51,10 @@
             textarea_p: function(txt) {
                 this.textareaText_p = txt
             },
+
+            checkbox_p: function(check) {
+                this.checInput_p = check
+            }
         },
     }
 
