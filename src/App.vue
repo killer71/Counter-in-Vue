@@ -1,19 +1,22 @@
 <template>
   <div id="app">
     <!-- <container-component/> -->
-    <gallery-component />
+    <!-- <gallery-component /> -->
+    <form-component></form-component>
   </div>
 </template>
 
 <script>
 import ContainerComponent from './components/ContainerComponent.vue'
 import GalleryComponent from './components/gallery/GalleryComponent.vue'
+import FormComponent from './components/inputs/FormComponent.vue'
 
 export default {
   name: 'app',
   components: {
     ContainerComponent,
-    GalleryComponent
+    GalleryComponent,
+    FormComponent
   },
 }
 </script>
