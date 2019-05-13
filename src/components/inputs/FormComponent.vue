@@ -21,6 +21,14 @@
 
         <b>{{ isChecked_p }}</b>
 
+        <select-component
+           :selected_c="selected_p"
+           @sel_c="sel_p"
+        ></select-component>
+        
+        
+        <b>{{selected_p}}</b>
+
     </div>
 </template>
 
@@ -28,19 +36,23 @@
     import InputComponent from './InputComponent.vue'
     import TextareaComponent from './TextareaComponent.vue'
     import CheckboxComponent from './CheckboxComponent.vue'
+    import SelectComponent from './SelectComponent.vue'
 
     export default {
         name: 'FormComponent',
         components: {
             InputComponent,
             TextareaComponent,
-            CheckboxComponent
+            CheckboxComponent,
+            SelectComponent
         },
         data() {
             return {
                 text_p: "Hello",
                 textareaText_p: "It is texarea",
-                isChecked_p: true
+                isChecked_p: true,
+                selected_p: ""
+                // options: ["One", "Two", "Three", "Four"],
             }
         },
         methods: {
@@ -52,6 +64,9 @@
             },
             checkbox_p: function(check) {
                 this.isChecked_p = check
+            },
+            sel_p: function(select) {
+                this.selected_p = select
             }
         },
     }

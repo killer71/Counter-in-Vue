@@ -18,10 +18,10 @@
                 type: String,
                 default: null
             },
-            value: {
-                type: String,
-                default: null
-            },
+            // value: {
+            //     type: String,
+            //     default: null
+            // },
         },
     }
 
